@@ -138,44 +138,44 @@ a:after {
 	font-weight: 400;
 }
 
-/* Green */
-#green {
+/* overview */
+#overview {
 	background-color: #7C91B3;
 	padding-top: 80px;
 	margin-bottom: 0px;
 	padding-bottom: 100px;
 }
 
-#green h3, #green h2, #green h1 {
+#overview h3, #overview h2, #overview h1 {
 	color: white;
 	font-weight: 400;
 	margin-bottom: 35px;
 }
 
-#green p, #green ol {
+#overview p, #overview ol {
 	color: white;
 	font-weight: 300;
 	font-size: 20px;
 }
 
-#explorers {
+#opendig {
 	background-color: white;
 	padding-bottom: 90px;
 	padding-top: 50px;
 }
 
-/* Skills */
-#skills {
+/* schema */
+#schema {
 	background-color: #7C91B3;
 	padding-top: 80px;
 	padding-bottom: 80px;
 }
 
-#skills h3 {
+#schema h3 {
 	color: white;
 }
 
-#skills p {
+#schema p {
 	color: white;
 	font-weight: 300;
 }
