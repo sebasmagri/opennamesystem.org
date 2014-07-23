@@ -1,4 +1,4 @@
-import os, json
+import os, json, random
 from flask import Flask
 from flask import render_template, send_from_directory, Response, url_for, request
 
@@ -12,7 +12,12 @@ app.config.update(
 # controllers
 @app.route('/')
 def index():
-	return render_template('index.html')
+	banner_repo_url = random.choice([
+		'https://github.com/opennamesystem/openspecs',
+		'https://github.com/opennamesystem/opendig',
+	])
+
+	return render_template('index.html', banner_repo_url=banner_repo_url)
 
 # special file handlers
 @app.route('/favicon.ico')
