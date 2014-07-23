@@ -1,5 +1,4 @@
-import os
-import json
+import os, json
 from flask import Flask
 from flask import render_template, send_from_directory, Response, url_for, request
 
@@ -15,10 +14,6 @@ app.config.update(
 def index():
 	return render_template('index.html')
 
-@app.route('/about')
-def about():
-	return render_template('about.html')
-
 # special file handlers
 @app.route('/favicon.ico')
 def favicon():
@@ -27,7 +22,7 @@ def favicon():
 # error handlers
 @app.errorhandler(404)
 def page_not_found(e):
-	return render_template('404.html'), 404
+	return "404", 404
 
 # server launchpad
 if __name__ == '__main__':

@@ -1,12 +1,217 @@
-{% extends "base.html" %}
-{% block content %}
-<div class="header-section">
-	<div class="row header-row">
-		<div class="span12 masthead">
-			<h1 class="heading">Welcome Home.</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Open Name System</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Dosis|Varela+Round' rel='stylesheet' type='text/css'>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+  	<div>
+  		<a href="https://github.com/opennamesystem/opendig">
+  			<img style="position: fixed; top: 0; right: 0; border: 0; z-index: 9999" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+  		</a>
+  	</div>
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            ONS
+          </a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#green">OVERVIEW</a>
+            </li>
+            <li>
+              <a href="#explorers">OPENDIG</a>
+            </li>
+            <li>
+              <a href="#skills">SCHEMA</a>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+
+    </div>
+
+
+	<div id="hello">
+	    <div class="container">
+	    	<div class="row">
+	    		<div class="col-lg-10 col-lg-offset-1 centered">
+	    			<h1>Open Name System</h1>
+	    			<h2>ICANN DNS + blockchain handles + blockchain domains</h2>
+	    		</div><!-- /col-lg-8 -->
+	    	</div><!-- /row -->
+	    </div> <!-- /container -->
+	</div><!-- /hello -->
+	
+	<div id="green">
+		<div class="container">
+			<div class="row">
+				<!--<div class="col-lg-5 centered">
+					<a href="#"><img src="assets/img/05.jpg" alt=""></a>
+				</div>-->
+				
+				<div class="col-lg-8 col-lg-offset-2">
+					<h2>OVERVIEW</h2>
+
+          <p>
+            The Open Name System (ONS) is a protocol that extends DNS by supporting the registration and resolution of:
+          </p>
+          <ol>
+            <li>user handles on the blockchain (DNS for people)</li>
+            <li>domains on the blockchain (truly decentralized DNS)</li>
+          </ol>
+          <p></p>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="header-push">
-</div>
-{% endblock %}
+
+		<div id="explorers">
+    <div class="container">
+			<div class="row mt grid">
+				<div class="col-lg-8 col-lg-offset-2">
+					<h2>OPENDIG</h2>
+
+          <p>
+            Opendig is a command line tool that extends the functionality of dig to support the resolution of user handles registered on the blockchain.
+          </p>
+
+<h4>Domains:</h4>
+<pre><code class="language-css">$ opendig -d angel.co
+
+angel.co. 59 IN A 50.18.171.72
+angel.co. 21599 IN NS ns-1437.awsdns-51.org.
+angel.co. 21599 IN NS ns-1845.awsdns-38.co.uk.
+angel.co. 21599 IN NS ns-193.awsdns-24.com.
+angel.co. 21599 IN NS ns-634.awsdns-15.net.
+...</code></pre>
+
+<h4>User Data:</h4>
+<pre><code class="language-css">$ opendig -u naval
+
+{
+    "name": {
+        "formatted": "Naval Ravikant"
+    },
+    "website": "https://angel.co/naval",
+    "bitcoin": {
+        "address": "1919UrhYyhs471ps8CFcJ3DRpWSda8qtSk"
+    },
+    ...
+    }
+}</code></pre>
+
+<h4>Bitcoin User Data:</h4>
+<pre><code class="language-css">$ opendig bitcoin -u naval
+
+{
+        "address": "1919UrhYyhs471ps8CFcJ3DRpWSda8qtSk"
+}</code></pre>
+
+
+				</div>
+
+				<!--<div class="col-lg-5 centered">
+					<img src="assets/img/04.jpg" alt="">
+				</div>-->
+			</div>
+		</div>
+    </div>
+
+	<div id="skills">
+		<div class="container">
+			<div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+  				<h2 class="light-header">USER SCHEMA</h2>
+        </div>
+			</div><!-- /row -->
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+
+        <p class="">
+          User calls to opendig will return user data in a standard schema - today most of the data is in what is known as userschema v0.2, but a new standard v0.3 is in the RFC phase. After sufficient people have reviewed, commented on, and revised the v0.3 schema, a rollout will begin.
+        </p>
+
+        <h3 class="">v0.2</h3>
+
+          <pre><code class="language-css">{
+    "name": {
+        "formatted": "Naval Ravikant"
+    },
+    "bitcoin": {
+        "address": "1919UrhYyhs471ps8CFcJ3DRpWSda8qtSk"
+    },
+    "twitter": {
+        "username": "naval",
+        "proof": {
+            "url": "https://twitter.com/naval/status/486609266212499456"
+        }
+    },
+    "v": "0.2",
+}</code></pre>
+
+				</div>
+			</div>
+		</div><!-- /container -->
+	</div><!-- /skills -->
+	
+	<section id="contact"></section>
+	<div id="social">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-8 col-lg-offset-2 centered">
+					<a href="https://github.com/opennamesystem/opendig" type="button" class="btn btn-theme btn-lg">Fork on Github</a>
+				</div>
+			</div>
+		</div><!-- /container -->
+	</div><!-- /social -->
+
+
+	<div id="f">
+		<div class="container">
+			<div class="row">
+				<p>&copy; opennamesystem.org - Distributed under the <a href="https://github.com/opennamesystem/opendig/blob/master/LICENSE">MIT License</a></p>
+			</div>
+		</div>
+	</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+  </body>
+</html>
