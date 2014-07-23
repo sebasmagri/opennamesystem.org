@@ -9,14 +9,16 @@ app.config.update(
 	SECRET_KEY = '04996c3ee9d42619afceda830ab7647e87c2b13d13b69cc5'
 )
 
+"""	banner_repo_url = random.choice([
+		'https://github.com/opennamesystem/openspecs',
+		,
+	])
+"""
+
 # controllers
 @app.route('/')
 def index():
-	banner_repo_url = random.choice([
-		'https://github.com/opennamesystem/openspecs',
-		'https://github.com/opennamesystem/opendig',
-	])
-
+	banner_repo_url = 'https://github.com/opennamesystem/opendig'
 	return render_template('index.html', banner_repo_url=banner_repo_url)
 
 # special file handlers
