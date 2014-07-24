@@ -6,14 +6,7 @@ from flask import render_template, send_from_directory, Response, url_for, reque
 app = Flask(__name__)
 app.config.update(
 	DEBUG = True,
-	SECRET_KEY = '04996c3ee9d42619afceda830ab7647e87c2b13d13b69cc5'
 )
-
-"""	banner_repo_url = random.choice([
-		'https://github.com/opennamesystem/openspecs',
-		,
-	])
-"""
 
 # controllers
 @app.route('/')
