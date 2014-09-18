@@ -126,6 +126,7 @@ a:after {
     	../img/water-horizon.jpg
     ) no-repeat;
     -webkit-background-size: cover;
+    background-size: cover;
 }
 
 #hello h1 {
